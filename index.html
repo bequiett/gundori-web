@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>군돌이</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-wrapper">
+        <!-- 입력 컨테이너 -->
+        <div class="input-container">
+            <h2 class="container-title">📝 입력 정보</h2>
+            
+            <div class="input-group">
+                <label for="enlistmentDate">입대일</label>
+                <input type="date" id="enlistmentDate">
+            </div>
+
+            <div class="input-group">
+                <label>복무일 변동 조정</label>
+                <div class="adjustment-container">
+                    <div class="adjustment-row">
+                        <select id="adjustmentType" class="adjustment-select">
+                            <option value="plus">+ 연장</option>
+                            <option value="minus">- 단축</option>
+                        </select>
+                    </div>
+                    <div class="adjustment-inputs">
+                        <div class="input-with-label">
+                            <input type="number" id="adjustmentMonths" min="0" max="12" value="0" class="adjustment-input">
+                            <label class="input-label">개월</label>
+                        </div>
+                        <div class="input-with-label">
+                            <input type="number" id="adjustmentDays" min="0" max="30" value="0" class="adjustment-input">
+                            <label class="input-label">일</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="adjustment-info">
+                    <small>조기전역, 징계 등에 따른 복무 변동 입력</small>
+                </div>
+            </div>
+
+            <button class="calculate-btn" onclick="startCalculation()">계산하기</button>
+        </div>
+
+        <!-- 출력 컨테이너 -->
+        <div class="output-container">
+            <h2 class="container-title">📊 복무 현황</h2>
+            
+            <div class="result" id="result">
+                <div class="service-info-grid">
+                    <div class="service-info-item">
+                        <div class="service-info-label">입영 일자</div>
+                        <div class="service-info-value" id="enlistmentInfo">-</div>
+                    </div>
+                    <div class="service-info-item">
+                        <div class="service-info-label">전역 일자</div>
+                        <div class="service-info-value" id="dischargeInfo">-</div>
+                    </div>
+                    <div class="service-info-item">
+                        <div class="service-info-label">복무일 변동</div>
+                        <div class="service-info-value" id="adjustmentInfo">-</div>
+                    </div>
+                </div>
+
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                </div>
+
+                <div class="info-row">
+                    <div class="info-item">
+                        <div class="info-label">전체 복무일</div>
+                        <div class="info-value" id="totalDays">-</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">현재 복무일</div>
+                        <div class="info-value" id="servedDays">-</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">남은 복무일</div>
+                        <div class="info-value" id="remainingDays">-</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

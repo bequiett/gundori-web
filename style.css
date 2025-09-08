@@ -1,0 +1,267 @@
+/*
+웹앱으로 작동하도록 설계하여 화면 폭 1050px 이하에 대한 CSS 대응이 없음
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.main-wrapper {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* 입력 컨테이너 */
+.input-container {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+    min-width: 320px;
+}
+
+/* 출력 컨테이너 */
+.output-container {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+    min-width: 400px;
+    position: relative;
+    height: fit-content;
+}
+
+.container-title {
+    text-align: left;
+    color: #000;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #ddd;
+    width: fit-content;
+    min-width: 120px;
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+    background: white;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+/* 복무일 변동 조정 스타일 */
+.adjustment-container {
+    background: #f8f9ff;
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid #e0e6ff;
+}
+
+.adjustment-row {
+    margin-bottom: 15px;
+}
+
+.adjustment-select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    background-color: white;
+}
+
+.adjustment-inputs {
+    display: flex;
+    gap: 15px;
+}
+
+.input-with-label {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.adjustment-input {
+    width: 100%;
+    padding: 8px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 5px;
+    background: white;
+}
+
+.input-label {
+    font-size: 12px;
+    color: #666;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.adjustment-info {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.adjustment-info small {
+    color: #666;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.calculate-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.calculate-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+.service-info-grid {
+    background: #f8f9ff;
+    border-radius: 10px;
+    border: 1px solid #e0e6ff;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.service-info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #e8ecff;
+}
+
+.service-info-item:last-child {
+    border-bottom: none;
+}
+
+.service-info-label {
+    font-size: 14px;
+    color: #666;
+    font-weight: bold;
+    min-width: 80px;
+}
+
+.service-info-value {
+    font-size: 14px;
+    color: #333;
+    text-align: right;
+    flex: 1;
+    margin-left: 15px;
+}
+
+.progress-container {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 40px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4CAF50, #45a049);
+    border-radius: 10px;
+    transition: width 0.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    width: 0%;
+}
+
+.percentage-display {
+    display: none;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    padding: 15px 0;
+    background: #f8f9ff;
+    border-radius: 10px;
+    border: 1px solid #e0e6ff;
+}
+
+.info-item {
+    text-align: center;
+    flex: 1;
+}
+
+.info-label {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.info-value {
+    font-size: 20px;
+    font-weight: bold;
+    color: #667eea;
+}
